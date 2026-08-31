@@ -23,7 +23,7 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 px-4 md:px-6 relative overflow-hidden">
+    <section id="projects" className="py-20 px-4 md:px-6 relative overflow-hidden group">
       {/* Enhanced background */}
       {/* <div className="absolute inset-0 bg-white"></div> */}
       <div className="absolute inset-0 opacity-[0.03]">
@@ -41,10 +41,10 @@ const Projects = () => {
               {/* <h2 className="text-sm font-semibold text-slate-600 mb-3 tracking-wider uppercase">
                 Portfolio
               </h2> */}
-              <h3 className="text-4xl md:text-5xl font-bold text-slate-900 font-styrene tracking-tight">
+              <h3 className="text-4xl md:text-5xl font-bold text-blue-600 font-styrene tracking-tight transition-colors duration-300">
                 Projects
               </h3>
-              <div className="w-24 h-1 bg-gradient-to-r from-slate-900 via-zinc-400 to-gray-800 rounded-full mx-auto mt-4"></div>
+              <div className="w-24 h-1 bg-gradient-to-r from-blue-600 via-blue-400 to-blue-500 rounded-full mx-auto mt-4 transition-colors duration-300"></div>
             </div>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-light">
               Recent work across data platforms and AI applications.
@@ -58,10 +58,10 @@ const Projects = () => {
                 <div
                   key={index}
                   onClick={() => handleProjectClick(project)}
-                  className="block cursor-pointer group animate-fade-in"
+                  className="block cursor-pointer group/card animate-fade-in"
                   style={{ animationDelay: `${index * 150}ms` }}
                 >
-                  <Card className="group-hover:shadow-2xl transition-all duration-500 overflow-hidden group-hover:scale-105 cursor-pointer h-full bg-white/70 backdrop-blur-md border border-white/50">
+                  <Card className="group-hover/card:shadow-2xl transition-all duration-500 overflow-hidden group-hover/card:scale-105 cursor-pointer h-full bg-white/70 backdrop-blur-md border border-white/50">
                     <div className="aspect-[16/10] bg-gradient-to-br from-slate-50/90 to-slate-100/90 relative overflow-hidden">
                       {project.image && (
                         <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full object-cover" />
@@ -76,17 +76,17 @@ const Projects = () => {
                           </span>
                         )}
                       </div>
-                      <div className="absolute inset-0 bg-slate-950/0 group-hover:bg-slate-950/5 transition-colors duration-300" />
+                      <div className="absolute inset-0 bg-slate-950/0 group-hover/card:bg-slate-950/5 transition-colors duration-300" />
                     </div>
 
                     <CardContent className="p-6">
                       <div className="flex justify-between items-start mb-4">
-                        <h4 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors line-clamp-2 flex-1 pr-2 font-styrene">
+                        <h4 className="text-xl font-bold text-slate-900 group-hover/card:text-blue-600 transition-colors line-clamp-2 flex-1 pr-2 font-styrene">
                           {project.title}
                         </h4>
                         <ArrowRight
                           size={20}
-                          className="text-slate-400 group-hover:text-blue-500 group-hover:translate-x-2 transition-all duration-300 flex-shrink-0"
+                          className="text-slate-400 group-hover/card:text-blue-500 group-hover/card:translate-x-2 transition-all duration-300 flex-shrink-0"
                         />
                       </div>
                       <p className="text-slate-600 mb-4 text-sm line-clamp-3 leading-relaxed">

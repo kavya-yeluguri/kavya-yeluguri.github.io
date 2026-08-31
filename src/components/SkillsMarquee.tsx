@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const SkillsMarquee = () => {
@@ -30,10 +29,10 @@ const SkillsMarquee = () => {
             {/* <h2 className="text-sm font-semibold text-gray-600 mb-2 tracking-wider uppercase">
               Technical Skills
             </h2> */}
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 font-styrene">
+            <h3 className="text-2xl md:text-3xl font-bold text-blue-600 font-styrene">
               Technologies & Tools
             </h3>
-            <div className="w-24 h-1 bg-gradient-to-r from-slate-900 via-zinc-400 to-gray-800 rounded-full mx-auto mt-4"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 via-blue-400 to-blue-500 rounded-full mx-auto mt-4"></div>
           </div>
         </div>
 

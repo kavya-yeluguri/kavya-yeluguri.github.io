@@ -1,11 +1,10 @@
-
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import ExperienceModal from './ExperienceModal';
 import EducationModal from './EducationModal';
 import { Card, CardContent } from '@/components/ui/card';
 import { getAssetPath } from '@/utils/pathUtils';
-import { Brain, Cpu, Database } from 'lucide-react';
+import { Brain, Database } from 'lucide-react';
 
 interface Experience {
   company: string;
@@ -53,7 +52,7 @@ const About = () => {
       period: "Aug 2021 - Oct 2024",
       image: getAssetPath("/hsbc.png"),
       details: "Migrated mainframe-based corporate card transaction pipelines (1M+ weekly records) to GCP using Control-M, Compute Engine, BigQuery, PostgreSQL reducing pipeline execution time by 35% and ensuring zero data loss. Guided and resolved 50+ data integrity issues using SQL query optimizations, collaborating with upstream and downstream teams and leveraging SQL on BigQuery to improve data consistency by 100% and ensure compliance. Created ETL workflows using Spark on Google Cloud Dataproc, reducing processing time of real-time financial analytics by 40% and cutting costs by 25% through optimized parallel data processing, improving scalability.",
-      technologies: ["GCP", "BigQuery", "PostgreSQL", "Triggers", "Views", , "Sql Functions", "Control-M", "Compute Engine", "SQL", "ETL", "Data Migration", "Apache Spark", "Mainframe", "Financial Analytics"],
+      technologies: ["GCP", "BigQuery", "PostgreSQL", "Triggers", "Views", "Sql Functions", "Control-M", "Compute Engine", "SQL", "ETL", "Data Migration", "Apache Spark", "Mainframe", "Financial Analytics"],
       achievements: [
         "Migrated mainframe-based corporate card transaction pipelines (1M+ weekly records) to GCP, reducing execution time by 35% and ensuring zero data loss",
         "Guided and resolved 50+ data integrity issues using SQL query optimizations, improving data consistency by 100% and ensuring compliance",
@@ -91,242 +90,218 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 px-2 md:px-6 relative">
-      <div className="max-w-7xl mx-auto relative z-10 space-y-20">
-        {/* About Me Section */}
-        <div 
-          className="text-center"
-        >
-          <div className="w-full max-w-6xl mx-auto bg-white/60 backdrop-blur-sm px-6 md:px-12 py-12 md:py-20 rounded-3xl relative overflow-hidden border border-white/40 shadow-2xl">
-            <div className="text-center mb-16 animate-fade-in">
-            <div className="inline-block bg-white/70 backdrop-blur-sm rounded-2xl px-8 py-4 shadow-lg border border-white/50 mb-6">
-              <h2 className="text-sm font-semibold text-slate-600 mb-3 tracking-wider uppercase">
-                About Me
-              </h2>
-              <h3 className="text-4xl md:text-5xl font-bold text-slate-900 font-styrene tracking-tight">
-                Background & Experience
-              </h3>
-              <div className="w-24 h-1 bg-gradient-to-r from-slate-900 via-zinc-400 to-gray-800 rounded-full mx-auto mt-4"></div>
-            </div>
+    <section id="about" className="py-20 px-4 sm:px-6 relative bg-dot-pattern">
+      <div className="max-w-4xl mx-auto space-y-16">
+        
+        {/* 1. About Me Section Card */}
+        <div className="group bg-slate-50/70 backdrop-blur-md border border-slate-300/60 rounded-[2.5rem] p-6 sm:p-12 shadow-md space-y-8 transition-all duration-300">
+          
+          {/* Title Pill Container */}
+          <div className="mx-auto w-fit bg-white border border-slate-200/90 rounded-2xl px-10 py-5 text-center shadow-md">
+            <p className="font-mono text-xs tracking-widest text-slate-400 uppercase mb-1">
+              ABOUT ME
+            </p>
+            <h2 className="text-2xl sm:text-4xl font-bold text-[#3b82f6] tracking-tight transition-colors duration-300">
+              Background & Experience
+            </h2>
+            <div className="w-10 h-0.5 bg-[#3b82f6] mx-auto mt-2.5 rounded-full transition-colors duration-300"></div>
           </div>
 
-            <div className="max-w-4xl mx-auto space-y-6 text-base md:text-lg text-slate-800 leading-relaxed font-styrene">
-              <p>
-                I'm Kavya Yeluguri, a Data Engineer with 5+ years of experience building cloud data pipelines, analytics platforms,
-                and AI-enabled workflows. My core expertise is data engineering on GCP, with a particular interest in designing 
-                systems that handle data reliably at scale. More recently, I've been expanding into AI systems and exploring 
-                how AI can become a practical part of the way we build, solve problems, and make better engineering decisions.
-              </p>
-              <p>                             
-               I currently work as a Data Engineer at PayPal, where I primarily work on micro-batch and real-time data processing systems. 
-               I enjoy going deep into problems, understanding how things work beneath the surface, and breaking complex challenges 
-               into simpler, practical solutions. I'm especially interested in designing systems that create real value for 
-               the products and people using them.
-              </p>
-              <p>
-                I believe good engineering is less about choosing the most sophisticated technology and more about understanding 
-                the problem well enough to build a simple, reliable solution that creates real value.
-              </p>
-            </div>
+          {/* Bio Text Paragraphs */}
+          <div className="max-w-3xl mx-auto space-y-5 text-slate-700 leading-relaxed text-sm sm:text-base text-center">
+            <p>
+              I'm Kavya Yeluguri, a Data Engineer with 5+ years of experience building cloud data pipelines, analytics platforms,
+              and AI-enabled workflows. My core expertise is data engineering on GCP, with a particular interest in designing 
+              systems that handle data reliably at scale. More recently, I've been expanding into AI systems and exploring 
+              how AI can become a practical part of the way we build, solve problems, and make better engineering decisions.
+            </p>
+            <p> 
+              I currently work as a Data Engineer at PayPal, where I primarily work on micro-batch and real-time data processing systems. 
+              I enjoy going deep into problems, understanding how things work beneath the surface, and breaking complex challenges 
+              into simpler, practical solutions. I'm especially interested in designing systems that create real value for 
+              the products and people using them.
+            </p>
+            <p>
+              I believe good engineering is less about choosing the most sophisticated technology and more about understanding 
+              the problem well enough to build a simple, reliable solution that creates real value.
+            </p>
+          </div>
 
-            <div className="grid md:grid-cols-3 gap-5 mt-12 text-left">
-              {focusAreas.map(({ title, icon: Icon, summary, proof }) => (
-                <div key={title} className="bg-white/70 border border-white/60 rounded-2xl p-5 shadow-lg">
-                  <div className="w-11 h-11 rounded-xl bg-slate-900 text-white flex items-center justify-center mb-4">
-                    <Icon size={22} />
-                  </div>
-                  <h4 className="text-xl font-bold text-slate-900 mb-3 font-styrene">{title}</h4>
-                  <p className="text-sm text-slate-700 leading-relaxed mb-4">{summary}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {proof.map((item) => (
-                      <span key={item} className="text-xs bg-slate-100 text-slate-700 px-3 py-1 rounded-full">
-                        {item}
-                      </span>
-                    ))}
-                  </div>
+          {/* Focus Areas Sub-cards */}
+          <div className="grid sm:grid-cols-2 gap-5 pt-4">
+            {focusAreas.map(({ title, icon: Icon, summary, proof }) => (
+              <div key={title} className="bg-white border border-slate-200/90 rounded-2xl p-6 shadow-sm space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-slate-900 text-white flex items-center justify-center">
+                  <Icon size={20} />
                 </div>
-              ))}
-            </div>
+                <h4 className="text-lg font-bold text-slate-900">{title}</h4>
+                <p className="text-xs text-slate-600 leading-relaxed">{summary}</p>
+                <div className="flex flex-wrap gap-1.5 pt-1">
+                  {proof.map((item) => (
+                    <span key={item} className="text-[11px] bg-slate-100 border border-slate-200 text-slate-700 px-2.5 py-0.5 rounded-full font-mono">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
+
         </div>
 
-        {/* Experience Section */}
-          <div className="w-full max-w-6xl mx-auto bg-white/60 backdrop-blur-sm px-6 md:px-12 py-12 md:py-20 rounded-3xl relative overflow-hidden border border-white/40 shadow-2xl">
-
-
-            <div className="text-center mb-16 animate-fade-in">
-            <div className="inline-block bg-white/70 backdrop-blur-sm rounded-2xl px-8 py-4 shadow-lg border border-white/50 mb-6">
-              {/* <h2 className="text-sm font-semibold text-slate-600 mb-3 tracking-wider uppercase">
-                Portfolio
-              </h2> */}
-              <h3 className="text-4xl md:text-5xl font-bold text-slate-900 font-styrene tracking-tight">
-                Professional Experience
-              </h3>
-              <div className="w-24 h-1 bg-gradient-to-r from-slate-900 via-zinc-400 to-gray-800 rounded-full mx-auto mt-4"></div>
-            </div>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-light">
-              A journey through innovative companies where I've built scalable data solutions
-            </p>
+        {/* 2. Professional Experience Card */}
+        <div className="group bg-slate-50/70 backdrop-blur-md border border-slate-300/60 rounded-[2.5rem] p-6 sm:p-12 shadow-md space-y-8 transition-all duration-300">
+          
+          <div className="mx-auto w-fit bg-white border border-slate-200/90 rounded-2xl px-10 py-5 text-center shadow-md">
+            <h2 className="text-2xl sm:text-4xl font-bold text-[#3b82f6] tracking-tight transition-colors duration-300">
+              Professional Experience
+            </h2>
+            <div className="w-10 h-0.5 bg-[#3b82f6] mx-auto mt-2.5 rounded-full transition-colors duration-300"></div>
           </div>
-            <div className="grid gap-8">
-              {experiences.map((exp, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.02 }}
-                  className="cursor-pointer"
-                  onClick={() => setSelectedExperience(exp)}
-                >
-                  <Card className="overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-white/40 backdrop-blur-md">
-                    <CardContent className="p-0">
-                      <div className="flex flex-col md:flex-row">
-                        {/* Company Image with Grey Background */}
-                        <div className="md:w-48 h-40 md:h-auto flex-shrink-0 relative overflow-hidden flex items-center justify-center p-6 bg-gray-100">
-                          <div className="w-32 h-32 rounded-full bg-white shadow-lg flex items-center justify-center hover:scale-110 transition-transform duration-300 overflow-hidden">
-                            <img 
-                              src={exp.image} 
-                              alt={exp.company}
-                              className={`object-contain rounded-full hover:scale-120 transition-transform duration-300 w-64 h-64 scale-125`}
-                            />
-                          </div>
+
+          <p className="text-center text-slate-600 text-sm sm:text-base max-w-xl mx-auto">
+            A journey through innovative companies where I've built scalable data solutions
+          </p>
+
+          <div className="grid gap-6">
+            {experiences.map((exp, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                onClick={() => setSelectedExperience(exp)}
+                className="cursor-pointer"
+              >
+                <Card className="overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-md transition-all bg-white rounded-2xl">
+                  <CardContent className="p-0">
+                    <div className="flex flex-col md:flex-row">
+                      <div className="md:w-44 h-36 md:h-auto flex-shrink-0 flex items-center justify-center p-4 bg-slate-50 border-r border-slate-100">
+                        <div className="w-20 h-20 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center p-2">
+                          <img 
+                            src={exp.image} 
+                            alt={exp.company}
+                            className="object-contain w-full h-full rounded-full"
+                          />
                         </div>
-                        {/* Content */}
-                        <div className="flex-1 p-8">
-                          <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                            <div>
-                              <h5 className="text-2xl font-bold text-black mb-2 font-styrene group-hover:text-slate-700 transition-colors">
-                                {exp.company}
-                              </h5>
-                              <p className="text-slate-700 font-medium text-lg mb-2 font-styrene">
-                                {exp.role}
-                              </p>
-                            </div>
-                            <span className="inline-block bg-white/60 text-slate-800 text-sm font-medium px-4 py-2 rounded-full whitespace-nowrap">
-                              {exp.period}
+                      </div>
+
+                      <div className="flex-1 p-6 space-y-3">
+                        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-1">
+                          <div>
+                            <h3 className="text-xl font-bold text-slate-900">
+                              {exp.company}
+                            </h3>
+                            <p className="text-slate-600 font-medium text-sm">
+                              {exp.role}
+                            </p>
+                          </div>
+                          <span className="inline-block bg-slate-100 border border-slate-200 text-slate-700 text-xs font-mono px-3 py-1 rounded-full w-fit">
+                            {exp.period}
+                          </span>
+                        </div>
+
+                        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                          {exp.details.substring(0, 150)}...
+                        </p>
+
+                        <div className="flex flex-wrap gap-1.5 pt-1">
+                          {exp.technologies.slice(0, 6).map((tech, techIndex) => (
+                            <span 
+                              key={techIndex} 
+                              className="text-[11px] bg-slate-100 border border-slate-200 text-slate-700 px-2.5 py-0.5 rounded-full font-mono"
+                            >
+                              {tech}
                             </span>
-                          </div>
-                          <p className="text-slate-700 mb-6 leading-relaxed">
-                            {exp.details.substring(0, 150)}...
-                          </p>
-                          <div className="flex flex-wrap gap-2">
-                            {exp.technologies.slice(0, 6).map((tech, techIndex) => (
-                              <span 
-                                key={techIndex} 
-                                className="text-xs bg-white/60 text-slate-700 px-3 py-1 rounded-full border border-white/40 hover:bg-white/80 transition-colors"
-                              >
-                                {tech}
-                              </span>
-                            ))}
-                            {exp.technologies.length > 6 && (
-                              <span className="text-xs text-slate-600 px-2 py-1">
-                                +{exp.technologies.length - 6} more
-                              </span>
-                            )}
-                          </div>
+                          ))}
+                          {exp.technologies.length > 6 && (
+                            <span className="text-[11px] text-slate-500 font-mono px-2 py-0.5">
+                              +{exp.technologies.length - 6} more
+                            </span>
+                          )}
                         </div>
                       </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-        {/* Education Section */}
-        <div>
-          <div className="w-full max-w-6xl mx-auto bg-white/60 backdrop-blur-sm px-6 md:px-12 py-12 md:py-20 rounded-3xl relative overflow-hidden border border-white/40 shadow-2xl">
-
-            <div className="text-center mb-16 animate-fade-in">
-            <div className="inline-block bg-white/70 backdrop-blur-sm rounded-2xl px-8 py-4 shadow-lg border border-white/50 mb-6">
-              {/* <h2 className="text-sm font-semibold text-slate-600 mb-3 tracking-wider uppercase">
-                Portfolio
-              </h2> */}
-              <h3 className="text-4xl md:text-5xl font-bold text-slate-900 font-styrene tracking-tight">
-                Academic Journey
-              </h3>
-              <div className="w-24 h-1 bg-gradient-to-r from-slate-900 via-zinc-400 to-gray-800 rounded-full mx-auto mt-4"></div>
-            </div>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-light">
-              Educational foundation that shaped my analytical thinking and technical expertise
-            </p>
-          </div>
-            <div className="grid gap-8">
-              {educations.map((edu, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.02 }}
-                  className="cursor-pointer"
-                  onClick={() => setSelectedEducation(edu)}
-                >
-                  <Card className="overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-white/40 backdrop-blur-md">
-                    <CardContent className="p-0">
-                      <div className="flex flex-col md:flex-row">
-                        {/* Institution Image with Grey Background */}
-                        <div className="md:w-48 h-40 md:h-auto flex-shrink-0 relative overflow-hidden flex items-center justify-center p-6 bg-gray-100">
-                          <div className="w-32 h-32 rounded-full bg-white shadow-lg flex items-center justify-center hover:scale-110 transition-transform duration-300 overflow-hidden">
-                            <img 
-                              src={edu.image} 
-                              alt={edu.institution}
-                              className="w-28 h-28 object-contain rounded-full hover:scale-110 transition-transform duration-300"
-                            />
-                          </div>
-                        </div>
-                        {/* Content */}
-                        <div className="flex-1 p-8">
-                          <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                            <div>
-                              <h5 className="text-2xl font-bold text-black mb-2 font-styrene group-hover:text-slate-700 transition-colors">
-                                {edu.institution}
-                              </h5>
-                              <p className="text-slate-700 font-medium text-lg mb-2 font-styrene">
-                                {edu.degree}
-                              </p>
-                            </div>
-                            <div className="flex flex-col items-end gap-2">
-                              <span className="inline-block bg-white/60 text-slate-800 text-sm font-medium px-4 py-2 rounded-full whitespace-nowrap">
-                                {edu.period}
-                              </span>
-                              {edu.gpa && (
-                                <span className="inline-block bg-green-50/80 text-green-700 text-sm font-medium px-4 py-2 rounded-full">
-                                  GPA: {edu.gpa}
-                                </span>
-                              )}
-                            </div>
-                          </div>
-                          <p className="text-slate-700 mb-6 leading-relaxed">
-                            {edu.details.substring(0, 150)}...
-                          </p>
-                          <div className="flex flex-wrap gap-2">
-                            {edu.coursework.slice(0, 6).map((course, courseIndex) => (
-                              <span 
-                                key={courseIndex} 
-                                className="text-xs bg-white/60 text-slate-700 px-3 py-1 rounded-full border border-white/40 hover:bg-white/80 transition-colors"
-                              >
-                                {course}
-                              </span>
-                            ))}
-                            {edu.coursework.length > 6 && (
-                              <span className="text-xs text-slate-600 px-2 py-1">
-                                +{edu.coursework.length - 6} more
-                              </span>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
           </div>
         </div>
+
+        {/* 3. Academic Journey Card */}
+        <div className="group bg-slate-50/70 backdrop-blur-md border border-slate-300/60 rounded-[2.5rem] p-6 sm:p-12 shadow-md space-y-8 transition-all duration-300">
+          
+          <div className="mx-auto w-fit bg-white border border-slate-200/90 rounded-2xl px-10 py-5 text-center shadow-md">
+            <h2 className="text-2xl sm:text-4xl font-bold text-[#3b82f6] tracking-tight transition-colors duration-300">
+              Academic Journey
+            </h2>
+            <div className="w-10 h-0.5 bg-[#3b82f6] mx-auto mt-2.5 rounded-full transition-colors duration-300"></div>
+          </div>
+
+          <p className="text-center text-slate-600 text-sm sm:text-base max-w-xl mx-auto">
+            Educational foundation that shaped my analytical thinking and technical expertise
+          </p>
+
+          <div className="grid gap-6">
+            {educations.map((edu, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                onClick={() => setSelectedEducation(edu)}
+                className="cursor-pointer"
+              >
+                <Card className="overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-md transition-all bg-white rounded-2xl">
+                  <CardContent className="p-0">
+                    <div className="flex flex-col md:flex-row">
+                      <div className="md:w-44 h-36 md:h-auto flex-shrink-0 flex items-center justify-center p-4 bg-slate-50 border-r border-slate-100">
+                        <div className="w-20 h-20 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center p-2">
+                          <img 
+                            src={edu.image} 
+                            alt={edu.institution}
+                            className="object-contain w-full h-full rounded-full"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="flex-1 p-6 space-y-3">
+                        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-1">
+                          <div>
+                            <h3 className="text-xl font-bold text-slate-900">
+                              {edu.institution}
+                            </h3>
+                            <p className="text-slate-600 font-medium text-sm">
+                              {edu.degree}
+                            </p>
+                          </div>
+                          <div className="flex flex-col items-start md:items-end gap-1">
+                            <span className="inline-block bg-slate-100 border border-slate-200 text-slate-700 text-xs font-mono px-3 py-1 rounded-full">
+                              {edu.period}
+                            </span>
+                            {edu.gpa && (
+                              <span className="inline-block bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-mono px-2.5 py-0.5 rounded-full">
+                                GPA: {edu.gpa}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+
+                        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                          {edu.details}
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
       </div>
 
       {/* Modals */}

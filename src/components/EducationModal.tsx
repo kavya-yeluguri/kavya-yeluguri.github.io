@@ -40,16 +40,7 @@ const EducationModal = ({ isOpen, onClose, education }: EducationModalProps) => 
             <p className="text-black">{education.details}</p>
           </div>
           
-          <div>
-            <h4 className="font-semibold text-black mb-2">Relevant Coursework</h4>
-            <div className="flex flex-wrap gap-2">
-              {education.coursework.map((course, index) => (
-                <span key={index} className="bg-gray-100 text-black px-3 py-1 rounded-full text-sm">
-                  {course}
-                </span>
-              ))}
-            </div>
-          </div>
+          
         </div>
       </DialogContent>
     </Dialog>

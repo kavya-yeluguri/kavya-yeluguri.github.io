@@ -17,7 +17,7 @@ const SocialIsland = () => {
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-1.5 text-gray-600 hover:text-gray-800 hover:scale-110 transition-all duration-300"
+              className="p-1.5 text-[#3b82f6] hover:text-[#3b82f6] hover:scale-110 transition-all duration-300"
               aria-label={social.label}
             >
               <social.icon size={18} />
