@@ -45,14 +45,14 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 pb-16 px-4 sm:px-6">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 pb-16 px-4 sm:px-6 bg-transparent">
 
       <div className="max-w-5xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-12 items-center relative z-10">
         
         {/* Left Column: Text Content */}
         <div className="md:col-span-7 space-y-6 text-center md:text-left">
           
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 border border-slate-200/80 text-slate-700 text-xs font-mono">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100/70 backdrop-blur-sm border border-slate-200/80 text-slate-700 text-xs font-mono">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
             Open to new opportunities
           </div>
@@ -84,7 +84,7 @@ const Hero = () => {
               href={getAssetPath("/kavya_yeluguri.pdf")} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium border border-slate-300 text-slate-700 bg-white hover:bg-slate-50 transition-all hover:scale-105 shadow-sm"
+              className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium border border-slate-300 text-slate-700 bg-white/70 backdrop-blur-sm hover:bg-white/90 transition-all hover:scale-105 shadow-sm"
             >
               <FileText size={16} className="mr-2" /> Resume
             </a>

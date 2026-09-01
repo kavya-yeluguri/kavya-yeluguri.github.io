@@ -35,10 +35,10 @@ const App = () => {
         <Sonner />
         <BrowserRouter basename={routerBaseName}>
           {/* Global Background Dots */}
-          <div className="fixed inset-0 opacity-[0.12] pointer-events-none z-0">
+          <div className="fixed inset-0 pointer-events-none z-0">
             <div className="w-full h-full" style={{
-              backgroundImage: 'radial-gradient(circle at 3px 3px, rgba(0,0,0,0.2) 1px, transparent 0)',
-              backgroundSize: '60px 60px'
+              backgroundImage: 'radial-gradient(circle at 3px 3px, rgba(0, 0, 0, 0.25) 1.5px, transparent 0)',
+              backgroundSize: '40px 40px'
             }}></div>
           </div>
 
