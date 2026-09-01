@@ -47,9 +47,9 @@ const Hero = () => {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 pb-16 px-4 sm:px-6">
       {/* Background Grid/Dots */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+      <div className="absolute inset-0 opacity-[0.1] pointer-events-none">
         <div className="w-full h-full" style={{
-          backgroundImage: 'radial-gradient(circle at 3px 3px, rgba(0,0,0,0.15) 1px, transparent 0)',
+          backgroundImage: 'radial-gradient(circle at 3px 3px, rgba(0,0,0,0.2) 1px, transparent 0)',
           backgroundSize: '60px 60px'
         }}></div>
       </div>
