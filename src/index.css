@@ -55,12 +55,13 @@
 }
 
 @layer utilities {
-  /* Dot Matrix Grid Utility */
+  /*
+   Dot Matrix Grid Utility
   .bg-dot-pattern {
-    background-image: radial-gradient(rgba(0, 0, 0, 0.1) 1.2px, transparent 1.2px);
-    background-size: 24px 24px;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.15) 2px, transparent 2px);
+    background-size: 28px 28px;
   }
-
+    */
   .scrolling-skills {
     animation: scroll-left 20s linear infinite;
   }
