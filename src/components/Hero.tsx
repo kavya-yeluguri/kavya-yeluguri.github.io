@@ -81,12 +81,12 @@ const Hero = () => {
 
             {/* Direct anchor tag wrapping standard button content to ensure reliable download/preview */}
             <a 
-              href={getAssetPath("/kavya_yeluguri.pdf")} 
+              href={getAssetPath("/portflio_resume.pdf")} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium border border-slate-300 text-slate-700 bg-white/70 backdrop-blur-sm hover:bg-white/90 transition-all hover:scale-105 shadow-sm"
+              className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium bg-foreground text-background hover:opacity-90 transition-all hover:scale-105 shadow-sm"
             >
-              <FileText size={16} className="mr-2" /> Resume
+              <FileText size={16} className="mr-2" /> View Resume
             </a>
           </div>
 
