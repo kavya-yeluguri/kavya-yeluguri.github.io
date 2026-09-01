@@ -34,7 +34,15 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter basename={routerBaseName}>
-          <div className="min-h-screen font-styrene dotted-grid">
+          {/* Global Background Dots */}
+          <div className="fixed inset-0 opacity-[0.12] pointer-events-none z-0">
+            <div className="w-full h-full" style={{
+              backgroundImage: 'radial-gradient(circle at 3px 3px, rgba(0,0,0,0.2) 1px, transparent 0)',
+              backgroundSize: '60px 60px'
+            }}></div>
+          </div>
+
+          <div className="relative min-h-screen font-styrene z-10 bg-transparent">
             <Routes>
               <Route path="/" element={<Index />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
